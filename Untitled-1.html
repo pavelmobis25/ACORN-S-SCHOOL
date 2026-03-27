@@ -1,0 +1,72 @@
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Školy A&T a A&J</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fa; }
+    header { background: #4CAF50; color: white; padding: 20px; text-align: center; }
+    nav { background: white; padding: 10px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    nav a { margin: 0 10px; text-decoration: none; color: #333; font-weight: bold; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px; }
+    .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; }
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; height: 200px; object-fit: cover; }
+    .card-content { padding: 20px; }
+    .btn { display: inline-block; margin-top: 10px; padding: 10px 15px; background: #4CAF50; color: white; text-decoration: none; border-radius: 8px; }
+    footer { text-align: center; padding: 20px; color: #777; }
+  </style>
+</head>
+<body>
+
+<header>
+<img src="logo.png" alt="Logo školy A&T" style="height: 80px;">
+  <h1>Školy A&T a A&J</h1>
+  <h1>Naše školy</h1>
+  <p>Vyberte si školku nebo školu</p>
+</header>
+
+<nav>
+  <a href="index.html">Domů</a>
+  <a href="ms-at.html">MŠ A&T</a>
+  <a href="ms-aj.html">Speciální MŠ A&J</a>
+  <a href="zs-aj.html">ZŠ A&J</a>
+</nav>
+
+<div class="grid">
+
+  <div class="card">
+    <img src="skolka1.jpg">
+    <div class="card-content">
+      <h2>Mateřská škola A&T s.r.o.</h2>
+      <p>Moderní přístup k předškolní výchově.</p>
+      <a href="ms-at.html" class="btn">Více informací</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="skolka2.jpg">
+    <div class="card-content">
+      <h2>Speciální mateřská škola A&J s.r.o.</h2>
+      <p>Individuální péče pro každé dítě.</p>
+      <a href="ms-aj.html" class="btn">Více informací</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="skola.jpg">
+    <div class="card-content">
+      <h2>Soukromá základní škola A&J s.r.o.</h2>
+      <p>Kvalitní vzdělání pro budoucnost.</p>
+      <a href="zs-aj.html" class="btn">Více informací</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Školy A&T a A&J
+</footer>
+
+</body>
+</html>

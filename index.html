@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Školy A&T a A&J</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fa; }
+
+    /* Header s logem vlevo a názvem */
+    header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: #4CAF50;
+      color: white;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    header img {
+      height: 120px;
+      flex-shrink: 0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    /* Navigace */
+    nav {
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
+      text-align: center;
+      transition: max-height 0.5s ease;
+      overflow: hidden;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      display: inline-block;
+      transition: color 0.3s, transform 0.3s;
+    }
+    nav a:hover {
+      color: #4CAF50;
+      transform: translateY(-2px);
+    }
+
+    /* Tlačítko menu pro mobil */
+    .menu-btn {
+      display: none;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      margin: 10px;
+      transition: background 0.3s;
+    }
+    .menu-btn.open {
+      background: #388E3C;
+    }
+
+    /* Sekce výsledky s odkazem */
+    .admissions {
+      background: #fff8e1;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 15px;
+      margin: 20px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .admissions h2 { margin-top: 0; color: #f57c00; }
+    .admissions p { font-size: 1.1em; margin: 10px 0; }
+    .admissions .btn-results {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .admissions .btn-results:hover {
+      background: #388E3C;
+    }
+
+    /* Grid s kartami */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .card { 
+      background: white; 
+      border-radius: 15px; 
+      overflow: hidden; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+      transition: 0.3s; 
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px 15px 0 0; }
+    .card-content { padding: 20px; }
+    .btn-card { display: inline-block; margin-top: 10px; padding: 10px 15px; background: #4CAF50; color: white; text-decoration: none; border-radius: 8px; }
+
+    footer { text-align: center; padding: 20px; color: #777; }
+
+    /* Responzivita */
+    @media (max-width: 600px) {
+      .menu-btn { display: block; }
+      nav a {
+        display: block;
+        margin: 10px 0;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      nav.active a { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="img/logo.png" alt="Logo školy A&T">
+  <h1>Školy A&T a A&J</h1>
+</header>
+
+<nav id="navbar">
+  <button class="menu-btn" id="menuBtn">☰ Menu</button>
+  <a href="index.html">Domů</a>
+  <a href="ms-at.html">MŠ A&T</a>
+  <a href="ms-aj.html">Speciální MŠ A&J</a>
+  <a href="zs-aj.html">ZŠ A&J</a>
+</nav>
+
+<!-- Sekce výsledky s odkazem -->
+<section class="admissions">
+  <div class="container">
+    <h2>Výsledky přijímacího řízení</h2>
+    <p>Výsledky přijímacího řízení do <strong>Mateřské školy U Bečvy 2, Přerov</strong> pro školní rok <strong>2026/2027</strong> si můžete zobrazit níže:</p>
+    <a href="vysledky.html" class="btn-results">Zobrazit výsledky</a>
+  </div>
+</section>
+
+<!-- Grid s kartami škol -->
+<div class="grid">
+  <div class="card">
+    <img src="img/skolka1.jpg" alt="MŠ A&T">
+    <div class="card-content">
+      <h2>Mateřská škola A&T s.r.o.</h2>
+      <p>Moderní přístup k předškolní výchově.</p>
+      <a href="ms-at.html" class="btn-card">Více informací</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="img/skolka2.jpg" alt="Speciální MŠ A&J">
+    <div class="card-content">
+      <h2>Speciální mateřská škola A&J s.r.o.</h2>
+      <p>Individuální péče pro každé dítě.</p>
+      <a href="ms-aj.html" class="btn-card">Více informací</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="img/skola.jpg" alt="ZŠ A&J">
+    <div class="card-content">
+      <h2>Soukromá základní škola A&J s.r.o.</h2>
+      <p>Kvalitní vzdělání pro budoucnost.</p>
+      <a href="zs-aj.html" class="btn-card">Více informací</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Školy A&T a A&J
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const nav = document.getElementById('navbar');
+  menuBtn.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    menuBtn.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
