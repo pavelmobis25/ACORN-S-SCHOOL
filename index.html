@@ -5,9 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Školy A&T a A&J</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fa; }
+    /* --------------------------------- */
+    /* Základní nastavení stránky */
+    /* --------------------------------- */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      position: relative;
+      z-index: 0;
+      background: #4CAF50; /* zelené pozadí */
+    }
 
-    /* Header s logem vlevo a názvem */
+    /* Pozadí s jemným průhledným obrázkem */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+        url('img/background-kids.png') center top no-repeat;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    /* --------------------------------- */
+    /* Header a navigace */
+    /* --------------------------------- */
     header {
       display: flex;
       align-items: center;
@@ -16,41 +42,45 @@
       color: white;
       gap: 20px;
       flex-wrap: wrap;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
+
     header img {
       height: 120px;
       flex-shrink: 0;
     }
+
     header h1 {
       margin: 0;
       font-size: 2em;
       flex-grow: 1;
       text-align: center;
+      text-shadow: 1px 1px 2px #333;
     }
 
-    /* Navigace */
     nav {
-      background: white;
+      background: #4CAF50;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: relative;
       text-align: center;
-      transition: max-height 0.5s ease;
-      overflow: hidden;
+      padding: 10px 0;
+      border-radius: 0 0 15px 15px;
     }
+
     nav a {
       margin: 0 15px;
       text-decoration: none;
-      color: #333;
+      color: white;
       font-weight: bold;
       display: inline-block;
       transition: color 0.3s, transform 0.3s;
     }
-    nav a:hover {
-      color: #4CAF50;
-      transform: translateY(-2px);
+
+    nav a:hover { 
+      color: #c8e6c9;
+      transform: translateY(-2px); 
     }
 
-    /* Tlačítko menu pro mobil */
+    /* Menu button pro mobil */
     .menu-btn {
       display: none;
       background: #4CAF50;
@@ -63,12 +93,13 @@
       margin: 10px;
       transition: background 0.3s;
     }
-    .menu-btn.open {
-      background: #388E3C;
-    }
+    .menu-btn.open { background: #388E3C; }
 
+    /* --------------------------------- */
     /* Sekce výsledky s odkazy */
+    /* --------------------------------- */
     .admissions {
+      position: relative;
       background: #fff8e1;
       padding: 40px 20px;
       text-align: center;
@@ -76,12 +107,106 @@
       margin: 20px auto;
       max-width: 800px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      z-index: 1;
     }
-    .admissions h2 { margin-top: 0; color: #f57c00; }
-    .admissions p { font-size: 1.1em; margin: 10px 0; }
-    .admissions .btn-results {
+
+    /* Nadpis s vykřičníky a barevným pozadím */
+    .admissions h2.important-info {
       display: inline-block;
-      margin: 10px 5px 0 5px;
+      background: #ffeb3b;
+      color: #d32f2f;
+      font-size: 1.8em;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 12px;
+      position: relative;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .admissions h2.important-info::before {
+      content: "❗ ";
+    }
+
+    .admissions h2.important-info::after {
+      content: " ❗";
+    }
+
+    .admissions p {
+      font-size: 1.1em;
+      margin: 15px 0 25px 0;
+    }
+
+    .results-block {
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .results-block .btn-results.ms {
+      background: #ffcc80;
+      color: #3e2723;
+    }
+
+    .results-block .btn-results.ms:hover {
+      background: #ffb74d;
+    }
+
+    .results-block .btn-results.zs {
+      background: #a5d6a7;
+      color: #1b5e20;
+    }
+
+    .results-block .btn-results.zs:hover {
+      background: #81c784;
+    }
+
+    .btn-results {
+      display: inline-block;
+      font-size: 1.1em;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    /* --------------------------------- */
+    /* Grid s kartami škol */
+    /* --------------------------------- */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .btn-card {
+      display: inline-block;
+      margin-top: 10px;
       padding: 10px 15px;
       background: #4CAF50;
       color: white;
@@ -89,42 +214,28 @@
       border-radius: 8px;
       transition: background 0.3s;
     }
-    .admissions .btn-results:hover {
-      background: #388E3C;
+
+    .btn-card:hover { background: #388E3C; }
+
+    /* --------------------------------- */
+    /* Footer */
+    /* --------------------------------- */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      border-top: 1px solid #ddd;
+      background: #f1f8e9;
     }
 
-    /* Grid s kartami */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
-    }
-    .card { 
-      background: white; 
-      border-radius: 15px; 
-      overflow: hidden; 
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-      transition: 0.3s; 
-    }
-    .card:hover { transform: translateY(-5px); }
-    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px 15px 0 0; }
-    .card-content { padding: 20px; }
-    .btn-card { display: inline-block; margin-top: 10px; padding: 10px 15px; background: #4CAF50; color: white; text-decoration: none; border-radius: 8px; }
-
-    footer { text-align: center; padding: 20px; color: #777; border-top: 1px solid #ddd; }
-
+    /* --------------------------------- */
     /* Responzivita */
+    /* --------------------------------- */
     @media (max-width: 600px) {
       .menu-btn { display: block; }
-      nav a {
-        display: block;
-        margin: 10px 0;
-        opacity: 0;
-        transform: translateY(-20px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-      }
-      nav.active a { opacity: 1; transform: translateY(0); }
+      header h1 { font-size: 1.5em; text-align: center; }
+      nav a { display: block; margin: 8px 0; }
+      .admissions { margin: 20px 10px; padding: 20px 10px; }
     }
   </style>
 </head>
@@ -132,7 +243,7 @@
 
 <header>
   <img src="img/logo.png" alt="Logo školy A&T">
-  <h1>Školy A&T a A&J</h1>
+  <h1>Mateřská a základní škola A&T a A&J</h1>
 </header>
 
 <nav id="navbar">
@@ -141,22 +252,26 @@
   <a href="ms-at.html">Mateřská Škola A&T</a>
   <a href="ms-aj.html">Speciální Mateřská Škola A&J</a>
   <a href="zs-aj.html">Základní Škola A&J</a>
- </nav>
+</nav>
 
-<!-- Sekce výsledky s odkazy -->
 <section class="admissions">
   <div class="container">
-    <h2>Výsledky přijímacího řízení a zápisu</h2>
+    <h2 class="important-info">Výsledky přijímacího řízení a zápisu</h2>
     <p>Výsledky si můžete zobrazit níže:</p>
-    <a href="vysledky.html" class="btn-results">Výsledky přijímacího řízení MŠ</a>
-    <a href="vysledky-zapisu.html" class="btn-results">Výsledky zápisu do 1. ročníku ZŠ 2026/2027</a>
+
+    <div class="results-block">
+      <a href="vysledky.html" class="btn-results ms">Výsledky přijímacího řízení MŠ</a>
+    </div>
+
+    <div class="results-block">
+      <a href="vysledky-zapisu.html" class="btn-results zs">Výsledky zápisu do 1. ročníku ZŠ 2026/2027</a>
+    </div>
   </div>
 </section>
 
-<!-- Grid s kartami škol -->
 <div class="grid">
   <div class="card">
-    <img src="img/skolka1.jpg" alt="MŠ A&T">
+    <img src="img/skolka1.png" alt="MŠ A&T">
     <div class="card-content">
       <h2>Mateřská škola A&T s.r.o.</h2>
       <p>Moderní přístup k předškolní výchově.</p>
@@ -165,7 +280,7 @@
   </div>
 
   <div class="card">
-    <img src="img/skolka2.jpg" alt="Speciální MŠ A&J">
+    <img src="img/skolka2.png" alt="Speciální MŠ A&J">
     <div class="card-content">
       <h2>Speciální mateřská škola A&J s.r.o.</h2>
       <p>Individuální péče pro každé dítě.</p>
@@ -174,7 +289,7 @@
   </div>
 
   <div class="card">
-    <img src="img/skola.jpg" alt="ZŠ A&J">
+    <img src="img/skola.png" alt="ZŠ A&J">
     <div class="card-content">
       <h2>Soukromá základní škola A&J s.r.o.</h2>
       <p>Kvalitní vzdělání pro budoucnost.</p>
