@@ -6,10 +6,10 @@ body {
   margin: 0;
   position: relative;
   z-index: 0;
-  background: #4CAF50; /* zelené pozadí */
+  background: #4CAF50;
 }
 
-/* Pozadí s jemným průhledným obrázkem */
+/* Pozadí */
 body::before {
   content: "";
   position: fixed;
@@ -25,24 +25,28 @@ body::before {
 }
 
 /* --------------------------------- */
-/* Header a navigace */
+/* Header */
 /* --------------------------------- */
 header {
   display: flex;
   align-items: center;
   padding: 20px;
+  padding-right: 160px; /* místo pro králíka */
   background: #4CAF50;
   color: white;
   gap: 20px;
   flex-wrap: wrap;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: relative;
 }
 
+/* Logo */
 header img {
   height: 120px;
   flex-shrink: 0;
 }
 
+/* Nadpis */
 header h1 {
   margin: 0;
   font-size: 2em;
@@ -51,6 +55,29 @@ header h1 {
   text-shadow: 1px 1px 2px #333;
 }
 
+/* 🐰 Velikonoční obrázek vpravo nahoře */
+.easter-header {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  width: 200px;
+  height: auto;
+  z-index: 10;
+}
+
+/* jemná animace */
+.easter-header {
+  animation: bunny-bounce 2s infinite ease-in-out;
+}
+
+@keyframes bunny-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* --------------------------------- */
+/* Navigace */
+/* --------------------------------- */
 nav {
   background: #4CAF50;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -73,7 +100,7 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* Menu button pro mobil */
+/* Mobil menu */
 .menu-btn {
   display: none;
   background: #4CAF50;
@@ -84,92 +111,34 @@ nav a:hover {
   cursor: pointer;
   border-radius: 8px;
   margin: 10px;
-  transition: background 0.3s;
 }
 
 .menu-btn.open { background: #388E3C; }
 
 /* --------------------------------- */
-/* Sekce výsledky s odkazy */
+/* Sekce výsledky */
 /* --------------------------------- */
 .admissions {
-  position: relative;
-  background: #fff8e1; /* jemně žlutá */
+  background: #fff8e1;
   padding: 40px 20px;
   text-align: center;
   border-radius: 15px;
   margin: 20px auto;
   max-width: 800px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  z-index: 1;
 }
 
-/* Nadpis s vykřičníky a pozadím */
 .admissions h2.important-info {
-  display: inline-block;
-  background: #ffeb3b; /* žluté pozadí */
-  color: #d32f2f;      /* tmavě červený text */
-  font-size: 1.8em;
-  font-weight: bold;
+  background: #ffeb3b;
+  color: #d32f2f;
   padding: 10px 20px;
   border-radius: 12px;
-  position: relative;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Vykřičníky před a za nadpisem */
-.admissions h2.important-info::before {
-  content: "❗ ";
-}
-
-.admissions h2.important-info::after {
-  content: " ❗";
-}
-
-.admissions p {
-  font-size: 1.1em;
-  margin: 15px 0 25px 0;
-}
-
-/* Blok pro každé tlačítko */
-.results-block {
-  margin: 15px 0;
-  padding: 20px;
-  border-radius: 12px;
-}
-
-/* Barevné pozadí pro jednotlivá tlačítka */
-.results-block .btn-results.ms {
-  background: #ffcc80; /* oranžová pro MŠ */
-  color: #3e2723;
-}
-
-.results-block .btn-results.ms:hover {
-  background: #ffb74d;
-}
-
-.results-block .btn-results.zs {
-  background: #a5d6a7; /* zelená pro ZŠ */
-  color: #1b5e20;
-}
-
-.results-block .btn-results.zs:hover {
-  background: #81c784;
-}
-
-/* Obecné styly tlačítek */
-.btn-results {
-  display: inline-block;
-  font-size: 1.1em;
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background 0.3s;
-}
+.admissions h2.important-info::before { content: "❗ "; }
+.admissions h2.important-info::after { content: " ❗"; }
 
 /* --------------------------------- */
-/* Grid s kartami škol */
+/* Grid karty */
 /* --------------------------------- */
 .grid {
   display: grid;
@@ -183,19 +152,17 @@ nav a:hover {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 15px 15px 0 0;
 }
 
 .card-content {
@@ -210,7 +177,6 @@ nav a:hover {
   color: white;
   text-decoration: none;
   border-radius: 8px;
-  transition: background 0.3s;
 }
 
 .btn-card:hover { background: #388E3C; }
@@ -221,17 +187,27 @@ nav a:hover {
 footer {
   text-align: center;
   padding: 20px;
-  color: #777;
-  border-top: 1px solid #ddd;
   background: #f1f8e9;
 }
 
 /* --------------------------------- */
-/* Responzivita */
+/* Mobil */
 /* --------------------------------- */
 @media (max-width: 600px) {
   .menu-btn { display: block; }
-  header h1 { font-size: 1.5em; text-align: center; }
-  nav a { display: block; margin: 8px 0; }
-  .admissions { margin: 20px 10px; padding: 20px 10px; }
+  header h1 { font-size: 1.5em; }
+
+  nav a { display: block; }
+
+  /* králík pod headerem na mobilu */
+  header {
+    padding-right: 20px;
+  }
+
+  .easter-header {
+    position: static;
+    display: block;
+    margin: 10px auto;
+    width: 100px;
+  }
 }

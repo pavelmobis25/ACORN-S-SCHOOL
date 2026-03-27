@@ -2,27 +2,80 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>Speciální MŠ A&J</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MŠ A&T – Základní informace</title>
 <style>
-body { font-family: Arial; margin:0; }
+body { font-family: Arial, sans-serif; margin:0; background:#e8f5e9; color:#333; }
 header { background:#4CAF50; color:white; padding:20px; text-align:center; }
-.container { padding:20px; }
-.class-box { background:#f0f0f0; padding:15px; margin:10px 0; border-radius:10px; }
-a { text-decoration:none; color:#4CAF50; }
+nav { background:#388E3C; }
+nav ul { list-style:none; margin:0; padding:0; }
+nav li { position:relative; margin:0; }
+nav li label { display:block; color:white; text-decoration:none; padding:14px 20px; font-weight:bold; cursor:pointer; background:#388E3C; }
+nav li label:hover { background:#4CAF50; }
+nav input[type=checkbox] { display:none; }
+nav li ul { display:none; background:#388E3C; margin:0; padding:0; }
+nav li ul li a { display:block; padding:10px 20px; color:white; text-decoration:none; }
+nav li ul li a:hover { background:#4CAF50; }
+nav input[type=checkbox]:checked + label + ul { display:block; }
+@media(min-width:600px){ nav li { float:left; } nav li ul { position:absolute; top:100%; left:0; min-width:180px; } nav li:hover > ul { display:block; } }
+
+.container { padding:20px; max-width:900px; margin:auto; }
+p, h2 { margin:15px 0; }
+a.back { text-decoration:none; color:#4CAF50; display:inline-block; margin-top:20px; font-weight:bold; }
 </style>
 </head>
 <body>
-<header><h1>Speciální mateřská škola A&J</h1></header>
+
+<header>
+  <h1>Speciální mateřská škola A&J</h1>
+</header>
+
+<nav>
+  <ul>
+    <li>
+      <input type="checkbox" id="menu1">
+      <label for="menu1">MŠ A&J ▾</label>
+      <ul>
+        <li><a href="ms-at.html">Základní informace</a></li>
+        <li><a href="ms-at-aktuality.html">Aktuality</a></li>
+        <li><a href="ms-at-plan-akci.html">Plán akcí</a></li>
+        <li><a href="ms-at-dokumenty.html">Dokumenty</a></li>
+        <li><a href="ms-at-kontakt.html">Kontakt</a></li>
+        <li><a href="ms-at-projekty.html">Projekty EU</a></li>
+        <li><a href="ms-at-gdpr.html">GDPR</a></li>
+        <li><a href="ms-at-prohlaseni.html">Prohlášení o přístupnosti</a></li>
+      </ul>
+    </li>
+    <li>
+      <input type="checkbox" id="menu2">
+      <label for="menu2">Třídy MŠ ▾</label>
+      <ul>
+        <li><a href="tridy-berusky.html">Berušky</a></li>
+        <li><a href="tridy-kotatka.html">Koťátka</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 <div class="container">
-<img src="skolka2.jpg" width="100%">
-<p>Individuální péče pro každé dítě.</p>
+  <h2>Základní informace</h2>
 
-<h2>Třídy</h2>
-<div class="class-box">🦋 Motýlci</div>
-<div class="class-box">☀️ Sluníčka</div>
+  <p><strong>Školní program:</strong><br>
+  "Společně v proudu poznávání"</p>
 
-<br>
-<a href="index.html">← Zpět na hlavní stránku</a>
+  <p>Nabídka pestrých, tvořivých a podnětných činností ze všech výchovně vzdělávacích oblastí s ohledem na speciální potřeby jednotlivých dětí a charakter jejich zdravotního znevýhodnění. Je doplněna o reedukační individuální vzdělávací plány jednotlivých dětí, zaměřené na maximální rozvoj osobnosti předškolního dítěte, s cílem jeho kvalitní přípravy pro vstup do základní školy.</p>
+
+  <p><strong>Provozní doba:</strong><br>
+  6:30 – 16:30</p>
+  <p>7:30 – 15:00 (speciální třída)</p>
+
+  <p><strong>Platby:</strong><br>
+  ŠKOLNÉ PLATÍ VŠECHNY DĚTI 500Kč<br>  </p>
+
+  <p>Do poznámky platebního příkazu uvádějte vždy celé jméno dítěte. Školné je splatné za každý měsíc vždy k poslednímu dni daného měsíce.</p>
+
+  <a href="index.html" class="back">← Zpět na hlavní stránku</a>
 </div>
+
 </body>
 </html>

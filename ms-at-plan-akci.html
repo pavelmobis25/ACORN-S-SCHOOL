@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MŠ A&T – Plán akcí</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; background:#e8f5e9; color:#333; }
+header { background:#4CAF50; color:white; padding:20px; text-align:center; }
+
+nav { background:#388E3C; }
+nav ul { list-style:none; margin:0; padding:0; }
+nav li { position:relative; margin:0; }
+nav li label { display:block; color:white; text-decoration:none; padding:14px 20px; font-weight:bold; cursor:pointer; background:#388E3C; }
+nav li label:hover { background:#4CAF50; }
+nav input[type=checkbox] { display:none; }
+nav li ul { display:none; background:#388E3C; margin:0; padding:0; }
+nav li ul li a { display:block; padding:10px 20px; color:white; text-decoration:none; }
+nav li ul li a:hover { background:#4CAF50; }
+nav input[type=checkbox]:checked + label + ul { display:block; }
+
+@media(min-width:600px){ 
+  nav li { float:left; } 
+  nav li ul { position:absolute; top:100%; left:0; min-width:180px; } 
+  nav li:hover > ul { display:block; } 
+}
+
+.container { padding:20px; max-width:900px; margin:auto; }
+h2 { color:#4CAF50; text-align:center; margin-bottom:20px; }
+ul { padding-left:20px; }
+li { margin:8px 0; }
+a.action-link { color:#4CAF50; font-weight:bold; text-decoration:none; }
+a.action-link:hover { text-decoration:underline; }
+a.back { display:inline-block; margin-top:20px; font-weight:bold; color:#4CAF50; text-decoration:none; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Plán akcí – MŠ A&T</h1>
+</header>
+
+<!-- MENU nahoře -->
+<nav>
+  <ul>
+    <li>
+      <input type="checkbox" id="menu1">
+      <label for="menu1">MŠ A&T ▾</label>
+      <ul>
+        <li><a href="ms-at.html">Základní informace</a></li>
+        <li><a href="ms-at-aktuality.html">Aktuality</a></li>
+        <li><a href="ms-at-plan-akci.html">Plán akcí</a></li>
+        <li><a href="ms-at-dokumenty.html">Dokumenty</a></li>
+        <li><a href="ms-at-kontakt.html">Kontakt</a></li>
+        <li><a href="ms-at-projekty.html">Projekty EU</a></li>
+        <li><a href="ms-at-gdpr.html">GDPR</a></li>
+        <li><a href="ms-at-prohlaseni.html">Prohlášení o přístupnosti</a></li>
+      </ul>
+    </li>
+    <li>
+      <input type="checkbox" id="menu2">
+      <label for="menu2">Třídy MŠ ▾</label>
+      <ul>
+        <li><a href="tridy-berusky.html">Berušky</a></li>
+        <li><a href="tridy-kotatka.html">Koťátka</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h2>Plán akcí pro školní rok</h2>
+  <ul>
+    <li><a href="zahajeni-skolniho-roku.html" class="action-link">ZAHÁJENÍ ŠKOLNÍHO ROKU</a></li>
+    <li><a href="ovocno-zeleninovy-den.html" class="action-link">OVOCNO – ZELENINOVÝ DEN „Zahrádky a zahrady“</a></li>
+    <li><a href="plavecky-vycvik.html" class="action-link">ZAHÁJENÍ PLAVECKÉHO VÝCVIKU V KLUBU CHOBOTNIČKA</a></li>
+    <li><a href="poznavame-prerov.html" class="action-link">POZNÁVÁME PŘEROV</a></li>
+    <li><a href="hratky-vytvarna.html" class="action-link">HRÁTKY A VÝTVARNÁ VÝCHOVA S PŘÍRODNINAMI</a></li>
+    <li><a href="anglictina.html" class="action-link">ZAHÁJENÍ KROUŽKU „Angličtina“</a></li>
+    <li><a href="canisterapie.html" class="action-link">CANISTERAPIE</a></li>
+    <li><a href="besedy-myslivec.html" class="action-link">BESEDY S MYSLIVCEM</a></li>
+    <li><a href="mikulas.html" class="action-link">MIKULÁŠSKÁ BESÍDKA</a></li>
+    <li><a href="vanocni-dilnicky.html" class="action-link">VÁNOČNÍ DÍLNIČKY A BESÍDKY</a></li>
+    <li><a href="lyzarsky-vycvik.html" class="action-link">ZAHÁJENÍ LYŽAŘSKÉHO VÝCVIKU</a></li>
+    <li><a href="karneval.html" class="action-link">KARNEVAL</a></li>
+    <li><a href="vylet-divadlo.html" class="action-link">ZÁJEZDY DO DIVADLA V OLOMOUCI</a></li>
+    <li><a href="divadelni-loutky.html" class="action-link">DIVADELNÍ LOUTKOVÉ PŘEDSTAVENÍ V MŠ</a></li>
+    <li><a href="barevny-tyden.html" class="action-link">BAREVNÝ TÝDEN</a></li>
+    <li><a href="navsteva-knihovny.html" class="action-link">NÁVŠTĚVA KNIHOVNY</a></li>
+    <li><a href="vynaseni-morany.html" class="action-link">VYNÁŠENÍ MORANY – VÍTÁNÍ JARA</a></li>
+    <li><a href="technika.html" class="action-link">TECHNIKA - NÁŠ KAMARÁD</a></li>
+    <li><a href="dopravni-den.html" class="action-link">DOPRAVNÍ DEN</a></li>
+    <li><a href="exkurze.html" class="action-link">EXKURZE (hasiči, policie, vlakové nádraží…)</a></li>
+    <li><a href="velikonoce.html" class="action-link">VELIKONOCE „Hody hody doprovody“</a></li>
+    <li><a href="carodejnice.html" class="action-link">ČARODĚJNICKÝ REJ</a></li>
+    <li><a href="zapis.html" class="action-link">ZÁPIS DO MATEŘSKÉ S SPECIÁLNÍ MATEŘSKÉ ŠKOLY</a></li>
+    <li><a href="besidka-maminky.html" class="action-link">BESÍDKA PRO MAMINKY</a></li>
+    <li><a href="skola-v-prirode.html" class="action-link">ŠKOLA V PŘÍRODĚ</a></li>
+    <li><a href="sportovni-den.html" class="action-link">SPORTOVNÍ DEN</a></li>
+    <li><a href="detsky-den.html" class="action-link">DĚTSKÝ DEN</a></li>
+    <li><a href="vylet.html" class="action-link">VÝLET</a></li>
+    <li><a href="slavnostni-rozlouceni.html" class="action-link">SLAVNOSTNÍ ROZLOUČENÍ SE ŠKOLÁKY (NOC V MŠ)</a></li>
+  </ul>
+
+  <a href="ms-at.html" class="back">← Zpět na základní informace</a>
+</div>
+
+</body>
+</html>

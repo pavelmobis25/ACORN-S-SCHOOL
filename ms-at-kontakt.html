@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakty – MŠ A&T</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; background:#e8f5e9; color:#333; }
+header { background:#4CAF50; color:white; padding:20px; text-align:center; }
+
+/* ---------------- Menu ---------------- */
+nav { background:#388E3C; }
+nav ul { list-style:none; margin:0; padding:0; }
+nav li { position:relative; margin:0; }
+nav li label { display:block; color:white; text-decoration:none; padding:14px 20px; font-weight:bold; cursor:pointer; background:#388E3C; }
+nav li label:hover { background:#4CAF50; }
+nav input[type=checkbox] { display:none; }
+nav li ul { display:none; background:#388E3C; margin:0; padding:0; }
+nav li ul li a { display:block; padding:10px 20px; color:white; text-decoration:none; }
+nav li ul li a:hover { background:#4CAF50; }
+nav input[type=checkbox]:checked + label + ul { display:block; }
+@media(min-width:600px){ 
+  nav li { float:left; } 
+  nav li ul { position:absolute; top:100%; left:0; min-width:180px; } 
+  nav li:hover > ul { display:block; } 
+}
+
+/* ---------------- Obsah ---------------- */
+.container { padding:20px; max-width:900px; margin:auto; }
+h2 { color:#4CAF50; margin-bottom:10px; }
+
+/* Hlavní layout kontaktů + obrázek vedle */
+.contact-wrapper {
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+/* Sekce kontaktů */
+.contact-section {
+  flex:1 1 300px; /* zabírá hlavní prostor */
+  background:#dcedc8;
+  padding:15px;
+  border-radius:10px;
+}
+
+/* Obrázek školy vpravo */
+.contact-image {
+  flex:0 0 200px; /* pevná šířka obrázku */
+  text-align:center;
+}
+.contact-image img {
+  width:100%;
+  border-radius:10px;
+}
+
+/* Text uvnitř boxů */
+.contact-section p { margin:5px 0; }
+.contact-section a { color:#4CAF50; text-decoration:none; }
+
+/* Zpět odkaz */
+a.back { text-decoration:none; color:#4CAF50; display:inline-block; margin-top:20px; font-weight:bold; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Kontakty – MŠ A&T</h1>
+</header>
+
+<!-- MENU nahoře -->
+<nav>
+  <ul>
+    <li>
+      <input type="checkbox" id="menu1">
+      <label for="menu1">MŠ A&T ▾</label>
+      <ul>
+        <li><a href="ms-at.html">Základní informace</a></li>
+        <li><a href="ms-at-aktuality.html">Aktuality</a></li>
+        <li><a href="ms-at-plan-akci.html">Plán akcí</a></li>
+        <li><a href="ms-at-dokumenty.html">Dokumenty</a></li>
+        <li><a href="ms-at-kontakt.html">Kontakt</a></li>
+        <li><a href="ms-at-projekty.html">Projekty EU</a></li>
+        <li><a href="ms-at-gdpr.html">GDPR</a></li>
+        <li><a href="ms-at-prohlaseni.html">Prohlášení o přístupnosti</a></li>
+      </ul>
+    </li>
+    <li>
+      <input type="checkbox" id="menu2">
+      <label for="menu2">Třídy MŠ ▾</label>
+      <ul>
+        <li><a href="tridy-berusky.html">Berušky</a></li>
+        <li><a href="tridy-kotatka.html">Koťátka</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <div class="contact-wrapper">
+
+    <!-- Sekce kontaktů -->
+    <div class="contact-section">
+      <h2>Adresa</h2>
+      <p><strong>Ulice:</strong> U Bečvy 2</p>
+      <p><strong>PSČ / Město:</strong> 750 02 Přerov</p>
+
+      <h2>Další údaje</h2>
+      <p><strong>Datová schránka:</strong> xj7m98</p>
+      <p><strong>IČO:</strong> 25378759</p>
+
+      <h2>Kancelář</h2>
+      <p><strong>Kontakt:</strong> Hana Malátková</p>
+      <p><strong>Telefon:</strong> +420 581 201 804; +420 722 107 304</p>
+      <p><strong>Email:</strong> <a href="mailto:acorn.skoly@seznam.cz">acorn.skoly@seznam.cz</a></p>
+
+      <h2>Ředitelna</h2>
+      <p><strong>Kontakt:</strong> Bc. Blanka Přibylová</p>
+      <p><strong>Telefon:</strong> +420 581 201 801; +420 734 127 353</p>
+      <p><strong>Email:</strong> <a href="mailto:pribylova.acorn@seznam.cz">pribylova.acorn@seznam.cz</a></p>
+
+      <a href="ms-at.html" class="back">← Zpět na hlavní stránku</a>
+    </div>
+
+    <!-- Obrázek školy -->
+    <div class="contact-image">
+      <img src="img/kontakty.jpg" alt="Mateřská škola A&T">
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -14,6 +14,7 @@
       position: relative;
       z-index: 0;
       background: #4CAF50; /* zelené pozadí */
+      overflow-x: hidden;
     }
 
     /* Pozadí s jemným průhledným obrázkem */
@@ -24,9 +25,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: 
-        linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-        url('img/background-kids.png') center top no-repeat;
+      background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('img/background-kids.png') center top no-repeat;
       background-size: cover;
       z-index: -1;
     }
@@ -43,9 +42,10 @@
       gap: 20px;
       flex-wrap: wrap;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: relative;
     }
 
-    header img {
+    header img.logo {
       height: 120px;
       flex-shrink: 0;
     }
@@ -58,12 +58,22 @@
       text-shadow: 1px 1px 2px #333;
     }
 
+    /* Králík nahoře vpravo */
+    header img.rabbit {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      height: 120px;
+      z-index: 10;
+    }
+
     nav {
       background: #4CAF50;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       text-align: center;
       padding: 10px 0;
       border-radius: 0 0 15px 15px;
+      position: relative;
     }
 
     nav a {
@@ -80,7 +90,6 @@
       transform: translateY(-2px); 
     }
 
-    /* Menu button pro mobil */
     .menu-btn {
       display: none;
       background: #4CAF50;
@@ -110,7 +119,6 @@
       z-index: 1;
     }
 
-    /* Nadpis s vykřičníky a barevným pozadím */
     .admissions h2.important-info {
       display: inline-block;
       background: #ffeb3b;
@@ -124,42 +132,24 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    .admissions h2.important-info::before {
-      content: "❗ ";
-    }
+    .admissions h2.important-info::before { content: "❗ "; }
+    .admissions h2.important-info::after  { content: " ❗"; }
 
-    .admissions h2.important-info::after {
-      content: " ❗";
-    }
+    .admissions p { font-size: 1.1em; margin: 15px 0 25px 0; }
 
-    .admissions p {
-      font-size: 1.1em;
-      margin: 15px 0 25px 0;
-    }
-
-    .results-block {
-      margin: 15px 0;
-      padding: 20px;
-      border-radius: 12px;
-    }
+    .results-block { margin: 15px 0; padding: 20px; border-radius: 12px; }
 
     .results-block .btn-results.ms {
       background: #ffcc80;
       color: #3e2723;
     }
-
-    .results-block .btn-results.ms:hover {
-      background: #ffb74d;
-    }
+    .results-block .btn-results.ms:hover { background: #ffb74d; }
 
     .results-block .btn-results.zs {
       background: #a5d6a7;
       color: #1b5e20;
     }
-
-    .results-block .btn-results.zs:hover {
-      background: #81c784;
-    }
+    .results-block .btn-results.zs:hover { background: #81c784; }
 
     .btn-results {
       display: inline-block;
@@ -187,23 +177,9 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
     }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 15px 15px 0 0;
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
+    .card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px 15px 0 0; }
+    .card-content { padding: 20px; }
     .btn-card {
       display: inline-block;
       margin-top: 10px;
@@ -214,7 +190,6 @@
       border-radius: 8px;
       transition: background 0.3s;
     }
-
     .btn-card:hover { background: #388E3C; }
 
     /* --------------------------------- */
@@ -229,21 +204,39 @@
     }
 
     /* --------------------------------- */
+    /* Velikonoční vajíčka */
+    /* --------------------------------- */
+    .egg {
+      position: fixed;
+      top: -100px;
+      z-index: 5;
+      pointer-events: none;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px); opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translateY(110vh); opacity: 0; }
+    }
+
+    /* --------------------------------- */
     /* Responzivita */
     /* --------------------------------- */
     @media (max-width: 600px) {
       .menu-btn { display: block; }
       header h1 { font-size: 1.5em; text-align: center; }
       nav a { display: block; margin: 8px 0; }
-      .admissions { margin: 20px 10px; padding: 20px 10px; }
+      header img.rabbit { height: 80px; top: 5px; right: 5px; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="img/logo.png" alt="Logo školy A&T">
+  <img src="img/logo.png" alt="Logo školy A&T" class="logo">
   <h1>Mateřská a základní škola A&T a A&J</h1>
+  <img src="img/rabbit.png" alt="Velikonoční králík" class="rabbit">
 </header>
 
 <nav id="navbar">
@@ -303,12 +296,26 @@
 </footer>
 
 <script>
+  // Menu mobil
   const menuBtn = document.getElementById('menuBtn');
   const nav = document.getElementById('navbar');
   menuBtn.addEventListener('click', () => {
     nav.classList.toggle('active');
     menuBtn.classList.toggle('open');
   });
+
+  // Vytvoření vajíček
+  const eggCount = 15; // počet vajíček
+  for(let i=0;i<eggCount;i++){
+    const egg = document.createElement('img');
+    egg.src = 'img/egg.png';
+    egg.className = 'egg';
+    egg.style.left = Math.random()*95 + 'vw';
+    egg.style.width = (40 + Math.random()*40) + 'px';
+    egg.style.animationDuration = (6 + Math.random()*6) + 's';
+    egg.style.animationDelay = (Math.random()*5)+'s';
+    document.body.appendChild(egg);
+  }
 </script>
 
 </body>
