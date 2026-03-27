@@ -37,10 +37,22 @@
       padding: 30px 20px;
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
     }
     .results h2 { color: #f57c00; margin-top: 0; }
     .results p, .results li { font-size: 1.1em; margin: 10px 0; }
-    .results ul { padding-left: 20px; }
+    .results ul { padding-left: 20px; text-align: left; display: inline-block; }
+    .btn-results {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 15px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .btn-results:hover { background: #388E3C; }
     footer { text-align: center; padding: 20px; color: #777; border-top: 1px solid #ddd; margin-top: 30px; }
   </style>
 </head>
@@ -77,6 +89,9 @@
   <p>Přijato 5 dětí, nepřijaty 4 děti, přerušení správního řízení – 2 žádosti o odklad PŠD.</p>
 
   <p><em>Mgr. Markéta Jiskrová, ředitelka školy</em></p>
+
+  <!-- Tlačítko zpět -->
+  <a href="index.html" class="btn-results">⬅ Zpět na hlavní stránku</a>
 </section>
 
 <footer>
