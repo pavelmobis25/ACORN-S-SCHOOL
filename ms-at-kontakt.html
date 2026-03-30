@@ -3,131 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kontakty – MŠ A&T</title>
+<title>MŠ A&T – Kontakty</title>
 <style>
-body { font-family: Arial, sans-serif; margin:0; background:#e8f5e9; color:#333; }
-header { background:#4CAF50; color:white; padding:20px; text-align:center; }
-
-/* ---------------- Menu ---------------- */
-nav { background:#388E3C; }
-nav ul { list-style:none; margin:0; padding:0; }
-nav li { position:relative; margin:0; }
-nav li label { display:block; color:white; text-decoration:none; padding:14px 20px; font-weight:bold; cursor:pointer; background:#388E3C; }
-nav li label:hover { background:#4CAF50; }
-nav input[type=checkbox] { display:none; }
-nav li ul { display:none; background:#388E3C; margin:0; padding:0; }
-nav li ul li a { display:block; padding:10px 20px; color:white; text-decoration:none; }
-nav li ul li a:hover { background:#4CAF50; }
-nav input[type=checkbox]:checked + label + ul { display:block; }
-@media(min-width:600px){ 
-  nav li { float:left; } 
-  nav li ul { position:absolute; top:100%; left:0; min-width:180px; } 
-  nav li:hover > ul { display:block; } 
+/* --------------------------------- */
+/* Základní nastavení stránky */
+/* --------------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  margin:0;
+  background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+              url('img/background-kids.png') center top no-repeat;
+  background-size: cover;
+  color:#333;
+  line-height:1.6;
+  overflow-x: hidden;
 }
 
-/* ---------------- Obsah ---------------- */
-.container { padding:20px; max-width:900px; margin:auto; }
-h2 { color:#4CAF50; margin-bottom:10px; }
-
-/* Hlavní layout kontaktů + obrázek vedle */
-.contact-wrapper {
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
+/* --------------------------------- */
+/* Header s logem vlevo a názvem uprostřed */
+/* --------------------------------- */
+header {
+  background:#4CAF50;
+  color:white;
+  padding:10px 20px;
+  position: relative;
+  height:120px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Sekce kontaktů */
-.contact-section {
-  flex:1 1 300px; /* zabírá hlavní prostor */
-  background:#dcedc8;
-  padding:15px;
-  border-radius:10px;
+header img {
+  position:absolute;
+  left:20px;
+  top:50%;
+  transform: translateY(-50%);
+  max-height:100px;
 }
 
-/* Obrázek školy vpravo */
-.contact-image {
-  flex:0 0 200px; /* pevná šířka obrázku */
+header h1 {
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  margin:0;
+  font-size:1.8em;
+  text-align:center;
+  text-shadow: 1px 1px 2px #333;
+}
+
+/* --------------------------------- */
+/* Navigace (stejná jako na hlavní stránce) */
+/* --------------------------------- */
+nav {
+  background:#388E3C;
+  padding:8px 0;
+  text-align:center;
+  border-bottom-left-radius:15px;
+  border-bottom-right-radius:15px;
+  width:100%;
+  box-sizing:border-box;
+}
+
+nav a {
+  color:white;
+  text-decoration:none;
+  margin:0 15px;
+  font-weight:bold;
+  font-size:1em;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a:hover {
+  color:#ffeb3b;
+  transform: scale(1.2) rotate(-3deg);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* --------------------------------- */
+/* Obsah stránky a karty */
+/* --------------------------------- */
+.container {
+  padding:40px 20px;
+  max-width:1000px;
+  margin:40px auto;
+  background: rgba(255,255,255,0.9);
+  border-radius:15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color:#2e7d32;
+  margin-bottom:20px;
   text-align:center;
 }
-.contact-image img {
-  width:100%;
+
+.card {
+  background:#f0fdf4;
+  border-left: 5px solid #4CAF50;
+  padding:20px;
+  margin-bottom:20px;
   border-radius:10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
 }
 
-/* Text uvnitř boxů */
-.contact-section p { margin:5px 0; }
-.contact-section a { color:#4CAF50; text-decoration:none; }
+.card:hover {
+  transform: scale(1.02);
+}
 
-/* Zpět odkaz */
-a.back { text-decoration:none; color:#4CAF50; display:inline-block; margin-top:20px; font-weight:bold; }
+.card h3 {
+  margin-top:0;
+  color:#2e7d32;
+}
+
+.card p {
+  margin:5px 0;
+}
+
+.card a {
+  color:#388E3C;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.card a:hover {
+  text-decoration:underline;
+}
+
+/* --------------------------------- */
+/* Responzivita */
+@media(max-width:600px){
+  header h1 { font-size:1.5em; }
+  header img { max-height:70px; }
+}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Kontakty – MŠ A&T</h1>
+  <img src="img/logo.png" alt="Logo školy A&T a A&J">
+  <h1>Mateřská škola A&T</h1>
 </header>
 
-<!-- MENU nahoře -->
 <nav>
-  <ul>
-    <li>
-      <input type="checkbox" id="menu1">
-      <label for="menu1">MŠ A&T ▾</label>
-      <ul>
-        <li><a href="ms-at.html">Základní informace</a></li>
-        <li><a href="ms-at-aktuality.html">Aktuality</a></li>
-        <li><a href="ms-at-plan-akci.html">Plán akcí</a></li>
-        <li><a href="ms-at-dokumenty.html">Dokumenty</a></li>
-        <li><a href="ms-at-kontakt.html">Kontakt</a></li>
-        <li><a href="ms-at-projekty.html">Projekty EU</a></li>
-        <li><a href="ms-at-gdpr.html">GDPR</a></li>
-        <li><a href="ms-at-prohlaseni.html">Prohlášení o přístupnosti</a></li>
-      </ul>
-    </li>
-    <li>
-      <input type="checkbox" id="menu2">
-      <label for="menu2">Třídy MŠ ▾</label>
-      <ul>
-        <li><a href="tridy-berusky.html">Berušky</a></li>
-        <li><a href="tridy-kotatka.html">Koťátka</a></li>
-      </ul>
-    </li>
-  </ul>
+  <a href="index.html">Úvod</a>
+  <a href="ms-at.html">Základní informace</a>
+  <a href="ms-at-aktuality.html">Aktuality</a>
+  <a href="ms-at-plan-akci.html">Plán akcí</a>
+  <a href="ms-at-dokumenty.html">Dokumenty</a>
+  <a href="ms-at-kontakt.html">Kontakt</a>
+  <a href="ms-at-projekty.html">Projekty EU</a>
+  <a href="ms-at-gdpr.html">GDPR</a>
+  <a href="ms-at-prohlaseni.html">Prohlášení o přístupnosti</a>
 </nav>
 
 <div class="container">
+  <h2>Kontakty</h2>
 
-  <div class="contact-wrapper">
+  <!-- Adresa školy -->
+  <div class="card">
+    <h3>Adresa školy</h3>
+    <p>U Bečvy 2</p>
+    <p>750 02 PŘEROV</p>
+    <p>Datová schránka: <a href="mailto:xj7m98">xj7m98</a></p>
+    <p>IČO: 25377060</p>
+  </div>
 
-    <!-- Sekce kontaktů -->
-    <div class="contact-section">
-      <h2>Adresa</h2>
-      <p><strong>Ulice:</strong> U Bečvy 2</p>
-      <p><strong>PSČ / Město:</strong> 750 02 Přerov</p>
+  <!-- Ředitelna -->
+  <div class="card">
+    <h3>Ředitelna</h3>
+    <p>Bc. Blanka Přibylová</p>
+    <p>📞 +420 581 201 801; +420 734 127 353</p>
+    <p>✉ <a href="mailto:pribylova.acorn@seznam.cz">pribylova.acorn@seznam.cz</a></p>
+  </div>
 
-      <h2>Další údaje</h2>
-      <p><strong>Datová schránka:</strong> xj7m98</p>
-      <p><strong>IČO:</strong> 25378759</p>
+  <!-- Kancelář -->
+  <div class="card">
+    <h3>Kancelář</h3>
+    <p>Hana Malátková</p>
+    <p>📞 +420 581 201 804; +420 722 107 304</p>
+    <p>✉ <a href="mailto:acorn.skoly@seznam.cz">acorn.skoly@seznam.cz</a></p>
+  </div>
 
-      <h2>Kancelář</h2>
-      <p><strong>Kontakt:</strong> Hana Malátková</p>
-      <p><strong>Telefon:</strong> +420 581 201 804; +420 722 107 304</p>
-      <p><strong>Email:</strong> <a href="mailto:acorn.skoly@seznam.cz">acorn.skoly@seznam.cz</a></p>
+  <!-- Další údaje -->
+  <div class="card">
+    <h3>Další údaje</h3>
+    <p>Zařízení školního stravování: Eva Kleinerová</p>
+    <p>Pevná linka: +420 581 201 478</p>
+  </div>
 
-      <h2>Ředitelna</h2>
-      <p><strong>Kontakt:</strong> Bc. Blanka Přibylová</p>
-      <p><strong>Telefon:</strong> +420 581 201 801; +420 734 127 353</p>
-      <p><strong>Email:</strong> <a href="mailto:pribylova.acorn@seznam.cz">pribylova.acorn@seznam.cz</a></p>
-
-      <a href="ms-at.html" class="back">← Zpět na hlavní stránku</a>
-    </div>
-
-    <!-- Obrázek školy -->
-    <div class="contact-image">
-      <img src="img/kontakty.jpg" alt="Mateřská škola A&T">
-    </div>
-
+  <!-- Mapa -->
+  <div class="card">
+    <h3>Kde nás najdete?</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2619.974150353961!2d17.452315!3d49.457174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471263f07c5d1b2b%3A0xa1d02854d567f1!2sU%20Be%C4%8Dvy%202%2C%20750%2002%20P%C5%98EROV!5e0!3m2!1scs!2scz!4v1615832753621!5m2!1scs!2scz" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
 
 </div>

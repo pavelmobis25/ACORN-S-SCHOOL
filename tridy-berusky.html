@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MŠ A&T – Plán akcí</title>
+<title>MŠ A&T – Třída Berušky</title>
 <style>
 /* --------------------------------- */
 /* Základní nastavení stránky */
@@ -51,7 +51,7 @@ header h1 {
 }
 
 /* --------------------------------- */
-/* Navigace (stejná jako na hlavní stránce) */
+/* Navigace */
 /* --------------------------------- */
 nav {
   background:#388E3C;
@@ -90,9 +90,40 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-h2 { color:#2e7d32; text-align:center; margin-bottom:20px; }
-ul { padding-left:20px; }
-li { margin:8px 0; }
+h2 {
+  color:#2e7d32;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+p {
+  margin-bottom:15px;
+}
+
+/* Fotka učitelky napravo */
+.teacher-img {
+  float:right;
+  max-width:180px;
+  margin-left:20px;
+  border-radius:10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Galerie fotek pod textem */
+.photo-gallery {
+  display:flex;
+  justify-content: center;
+  gap:20px;
+  margin-top:25px;
+  flex-wrap: wrap;
+}
+
+.photo-gallery img {
+  max-width:250px; /* větší obrázky */
+  width:100%;
+  border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
 
 /* Back button */
 a.back {
@@ -115,6 +146,8 @@ a.back:hover {
 @media(max-width:600px){
   header h1 { font-size:1.5em; }
   header img { max-height:70px; }
+  .teacher-img { float:none; display:block; margin: 0 auto 15px auto; max-width: 150px; }
+  .photo-gallery img { max-width:180px; }
 }
 </style>
 </head>
@@ -138,39 +171,22 @@ a.back:hover {
 </nav>
 
 <div class="container">
-  <h2>Plán akcí pro školní rok</h2>
+  <h2>Třída Berušky</h2>
 
-  <ul>
-    <li>ZAHÁJENÍ ŠKOLNÍHO ROKU</li>
-    <li>OVOCNO – ZELENINOVÝ DEN „Zahrádky a zahrady“</li>
-    <li>ZAHÁJENÍ PLAVECKÉHO VÝCVIKU V KLUBU CHOBOTNIČKA</li>
-    <li>POZNÁVÁME PŘEROV</li>
-    <li>HRÁTKY A VÝTVARNÁ VÝCHOVA S PŘÍRODNINAMI</li>
-    <li>ZAHÁJENÍ KROUŽKU „Angličtina“</li>
-    <li>CANISTERAPIE</li>
-    <li>BESEDY S MYSLIVCEM</li>
-    <li>MIKULÁŠSKÁ BESÍDKA</li>
-    <li>VÁNOČNÍ DÍLNIČKY A BESÍDKY</li>
-    <li>ZAHÁJENÍ LYŽAŘSKÉHO VÝCVIKU</li>
-    <li>KARNEVAL</li>
-    <li>ZÁJEZDY DO DIVADLA V OLOMOUCI</li>
-    <li>DIVADELNÍ LOUTKOVÉ PŘEDSTAVENÍ V MŠ</li>
-    <li>BAREVNÝ TÝDEN</li>
-    <li>NÁVŠTĚVA KNIHOVNY</li>
-    <li>VYNÁŠENÍ MORANY – VÍTÁNÍ JARA</li>
-    <li>TECHNIKA - NÁŠ KAMARÁD</li>
-    <li>DOPRAVNÍ DEN</li>
-    <li>EXKURZE (hasiči, policie, vlakové nádraží…)</li>
-    <li>VELIKONOCE „Hody hody doprovody“</li>
-    <li>ČARODĚJNICKÝ REJ</li>
-    <li>ZÁPIS DO MATEŘSKÉ S SPECIÁLNÍ MATEŘSKÉ ŠKOLY</li>
-    <li>BESÍDKA PRO MAMINKY</li>
-    <li>ŠKOLA V PŘÍRODĚ</li>
-    <li>SPORTOVNÍ DEN</li>
-    <li>DĚTSKÝ DEN</li>
-    <li>VÝLET</li>
-    <li>SLAVNOSTNÍ ROZLOUČENÍ SE ŠKOLÁKY (NOC V MŠ)</li>
-  </ul>
+  <img src="img/beruska.png" alt="Třídní učitelka" class="teacher-img">
+
+  <p><strong>Třídní učitelky:</strong> Zdena Běhalíková, Bc. Kateřina Trnková</p>
+  <p><strong>Asistentka pedagoga:</strong> Petra Černá</p>
+  <p><strong>Kontakt:</strong> +420 605 530 238</p>
+  <p><strong>Skladba třídy:</strong> V naší třídě je 26 dětí. Věkové složení třídy je od 3 let do 6 (7) let.</p>
+  <p><strong>Provoz třídy:</strong> 6:30 – 16:30 hod.</p>
+  <p><strong>Třída:</strong> Třída je umístěna v 1.patře pravého křídla budovy. Třída představuje jednu ze dvou tříd mateřské školy klasického typu. Je rozdělena na dvě části – prostornou hernu a třídu se stolky a židličkami. Zde mají děti prostor pro své tvořivé, námětové i pohybové aktivity. Ložničku, sloužící dětem k relaxaci na lehátku mají děti situovanou samostatně. Mají však většinou příležitost účastnit se přiměřeně relaxačních aktivit i v této době. Hojně využíváme i dalších společných prostor budovy, včetně tělocvičny a jídelny. Budovou se děti přemísťují často osobním výtahem.</p>
+  <p><strong>Zaměření třídy:</strong> Děti si hrají a pracují pod odborným vedením zkušených pedagogů často ve skupinách. Ty se tvoří podle individuálního výběru činnosti, zájmu i stupni náročnosti zvolených aktivit. Pestrý a zábavný program respektuje závazné normy předškolního vzdělávání dané ministerstvem školství ČR a směřuje k maximálnímu rozvoji zdravého vývoje dítěte a jeho osobnosti. Důraz klademe na prožitkové učení hrou a činnostmi dětí, situační učení a spontánní sociální učení. Pravidelně se zúčastňujeme kulturních a sportovních akcí pro děti pořádaných různými zábavnými agenturami. Nadstandardně zařazujeme do programové nabídky pravidelně i školu v přírodě a s erudovanými lektory lyžařskou školu nebo hravou výuku angličtiny.</p>
+
+  <div class="photo-gallery">
+    <img src="img/berusky1.jpg" alt="Beruška 1">
+    <img src="img/berusky2.jpg" alt="Beruška 2">
+  </div>
 
   <a href="ms-at.html" class="back">← Zpět na základní informace</a>
 </div>

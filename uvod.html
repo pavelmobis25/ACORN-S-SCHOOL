@@ -5,53 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Úvod - Školy A&T a A&J</title>
   <style>
+    /* --------------------------------- */
+    /* Základní nastavení stránky */
+    /* --------------------------------- */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #e8f5e9;
+      background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+                  url('img/background-kids.png') center top no-repeat;
+      background-size: cover;
       color: #333;
       line-height: 1.6;
+      overflow-x: hidden;
     }
+
+    /* --------------------------------- */
+    /* Header */
+    /* --------------------------------- */
     header {
       background: #4CAF50;
       color: white;
-      padding: 20px;
-      text-align: center;
+      padding: 20px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: relative;
+      height: 120px; /* stejné jako hlavní stránka */
     }
+
+    /* Logo vlevo */
+    header img {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      max-height: 100px; /* stejné jako hlavní stránka */
+    }
+
+    /* Nadpis uprostřed */
+    header h1 {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      font-size: 2em; /* stejné jako hlavní stránka */
+      text-align: center;
+      text-shadow: 1px 1px 2px #333;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+      header img {
+        max-height: 70px;
+      }
+    }
+
+    /* --------------------------------- */
+    /* Navigace */
+    /* --------------------------------- */
     nav {
-      background: #388E3C;
-      padding: 10px;
-      text-align: center;
-    }
+  background: #388E3C; /* tmavší lišta pod headerem */
+  padding: 8px 0;      /* užší než header */
+  text-align: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 100%;         /* plná šířka obrazovky */
+  box-sizing: border-box; /* zajistí správné paddingy */
+}
+
     nav a {
       color: white;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
       font-size: 1em;
+      transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+      display: inline-block;
     }
-    nav a:hover { color: #c8e6c9; }
+
+    nav a:hover {
+      color: #ffeb3b;
+      transform: scale(1.2) rotate(-3deg);
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+
+    /* --------------------------------- */
+    /* Obsah */
+    /* --------------------------------- */
     section {
       padding: 40px 20px;
       max-width: 900px;
       margin: 40px auto;
-      background: white;
+      background: rgba(255,255,255,0.9);
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
+
     h2 {
       color: #2e7d32;
     }
+
     h3 {
       color: #388E3C;
       margin-top: 25px;
     }
+
     p, ul {
       margin-bottom: 15px;
     }
+
     ul li {
       margin-bottom: 8px;
     }
+
     /* tlačítko zpět */
     .back-btn {
       display: inline-block;
@@ -64,6 +131,7 @@
       font-weight: bold;
       transition: background 0.3s;
     }
+
     .back-btn:hover {
       background: #388E3C;
     }
@@ -72,6 +140,7 @@
 <body>
 
 <header>
+  <img src="img/logo.png" alt="Logo školy A&T a A&J">
   <h1>Mateřská a základní škola A&T a A&J</h1>
 </header>
 
@@ -84,19 +153,15 @@
 
 <section>
   <h2>Vítejte na našich stránkách!</h2>
-
   <p>
     V klidném a překrásném prostředí v bezprostřední blízkosti řeky Bečvy nedaleko parku Michalov se nachází prostorná budova, kterou z větší části obývá mateřská a speciální mateřská škola. Částečně zde působí i soukromá základní škola.
   </p>
-
   <p>
     Přímo v budově je dětský bazén, sauna, tělocvična, samostatná jídelna, oddělené ložničky a prostorné herny. Naše školky mají své vlastní třídy i program, avšak funguje zde velmi úspěšně přirozený způsob vzájemné integrace. Nadstandardní součástí programové nabídky je předplavecká výchova, která probíhá během celého školního roku. Zařazujeme keramické hrátky, individuálně logopedickou průpravu a další…
   </p>
-
   <p>
     Hlavní část základní školy sídlí v budově přes řeku Bečvu na adrese Máchova 3, kde probíhá největší část výuky formou malotřídního systému. Učitelé i asistenti pedagogů se věnují žákům ve dvou běžných a třech speciálních třídách.
   </p>
-
   <p>
     Pedagogický kolektiv je kreativní se smyslem pro zodpovědnost, aktivní hru i tvořivou zábavu dětí.
   </p>
@@ -112,12 +177,8 @@
   <ul>
     <li>Třída MOTÝLCI – třída pro děti s různým typem a stupněm postižení.</li>
     <li>Třída SLUNÍČKA – třída pro děti se zrakovým postižením – poruchou binokulárního vidění.</li>
-    <li>Navštěvují ji děti se speciálními vzdělávacími potřebami, kterým je poskytován zvýšený individuální přístup. Běžný vzdělávací program je obohacen o řadu speciálních cvičení a terapeutických technik nebo je v některých případech upraven individuálním možnostem dětí.</li>
+    <li>Navštěvují ji děti se speciálními vzdělávacími potřebami, kterým je poskytován zvýšený individuální přístup.</li>
   </ul>
-
-  <p>
-    Programová nabídka zahrnuje všechny důležité složky jednotlivých výchov od pohybové, estetické, jazykové po rozumovou. Přiměřeným způsobem stimuluje psychomotorický vývoj předškolních dětí, vede je k aktivitě, samostatnosti a tvořivosti.
-  </p>
 
   <h3>Soukromá základní škola A&J s.r.o.</h3>
   <ul>
@@ -128,11 +189,6 @@
     <li>Třída IV. – speciální</li>
   </ul>
 
-  <p>
-    Programová náplň plně koresponduje s individuálními potřebami dětí. Obsahuje vzdělávání ve všech oblastech učiva ZŠ. Po domluvě je možné využít odpolední školní autodopravy pro děti ze vzdálenějšího okolí.
-  </p>
-
-  <!-- Tlačítko zpět -->
   <a href="index.html" class="back-btn">⬅ Zpět na hlavní stránku</a>
 </section>
 

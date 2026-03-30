@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MŠ A&T – Plán akcí</title>
+<title>MŠ A&T – Dokumenty</title>
 <style>
 /* --------------------------------- */
 /* Základní nastavení stránky */
@@ -90,9 +90,32 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-h2 { color:#2e7d32; text-align:center; margin-bottom:20px; }
-ul { padding-left:20px; }
-li { margin:8px 0; }
+h2 {
+  color:#2e7d32;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+ul {
+  padding-left:20px;
+}
+
+li {
+  margin:12px 0;
+}
+
+/* jednotná barva odkazů */
+ul li a, a.doc-link {
+  color:#4CAF50;
+  font-weight:bold;
+  text-decoration:none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+ul li a:hover, a.doc-link:hover {
+  color:#388E3C;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
 
 /* Back button */
 a.back {
@@ -138,38 +161,13 @@ a.back:hover {
 </nav>
 
 <div class="container">
-  <h2>Plán akcí pro školní rok</h2>
-
+  <h2>Dokumenty</h2>
   <ul>
-    <li>ZAHÁJENÍ ŠKOLNÍHO ROKU</li>
-    <li>OVOCNO – ZELENINOVÝ DEN „Zahrádky a zahrady“</li>
-    <li>ZAHÁJENÍ PLAVECKÉHO VÝCVIKU V KLUBU CHOBOTNIČKA</li>
-    <li>POZNÁVÁME PŘEROV</li>
-    <li>HRÁTKY A VÝTVARNÁ VÝCHOVA S PŘÍRODNINAMI</li>
-    <li>ZAHÁJENÍ KROUŽKU „Angličtina“</li>
-    <li>CANISTERAPIE</li>
-    <li>BESEDY S MYSLIVCEM</li>
-    <li>MIKULÁŠSKÁ BESÍDKA</li>
-    <li>VÁNOČNÍ DÍLNIČKY A BESÍDKY</li>
-    <li>ZAHÁJENÍ LYŽAŘSKÉHO VÝCVIKU</li>
-    <li>KARNEVAL</li>
-    <li>ZÁJEZDY DO DIVADLA V OLOMOUCI</li>
-    <li>DIVADELNÍ LOUTKOVÉ PŘEDSTAVENÍ V MŠ</li>
-    <li>BAREVNÝ TÝDEN</li>
-    <li>NÁVŠTĚVA KNIHOVNY</li>
-    <li>VYNÁŠENÍ MORANY – VÍTÁNÍ JARA</li>
-    <li>TECHNIKA - NÁŠ KAMARÁD</li>
-    <li>DOPRAVNÍ DEN</li>
-    <li>EXKURZE (hasiči, policie, vlakové nádraží…)</li>
-    <li>VELIKONOCE „Hody hody doprovody“</li>
-    <li>ČARODĚJNICKÝ REJ</li>
-    <li>ZÁPIS DO MATEŘSKÉ S SPECIÁLNÍ MATEŘSKÉ ŠKOLY</li>
-    <li>BESÍDKA PRO MAMINKY</li>
-    <li>ŠKOLA V PŘÍRODĚ</li>
-    <li>SPORTOVNÍ DEN</li>
-    <li>DĚTSKÝ DEN</li>
-    <li>VÝLET</li>
-    <li>SLAVNOSTNÍ ROZLOUČENÍ SE ŠKOLÁKY (NOC V MŠ)</li>
+    <li><a href="docs/svp_AT.pdf" target="_blank">ŠVP</a></li>
+    <li><a href="docs/skolni_rad_AT_07-2025.pdf" target="_blank">ŠKOLNÍ ŘÁD</a></li>
+    <li><a href="docs/MSAT_provozni_rad_skolni_jidelny-vydejny2025.pdf" target="_blank">VNITŘNÍ ŘÁD ŠKOLNÍ JÍDELNY – VÝDEJNY</a></li>
+    <li><a href="DESATERO PRO RODIČE.html">DESATERO PRO RODIČE</a></li>
+    <li><a href="CO POTŘEBUJE DÍTĚ V MŠ.html">CO POTŘEBUJE DÍTĚ V MŠ</a></li>
   </ul>
 
   <a href="ms-at.html" class="back">← Zpět na základní informace</a>

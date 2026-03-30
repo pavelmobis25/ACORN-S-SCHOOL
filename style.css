@@ -7,9 +7,10 @@ body {
   position: relative;
   z-index: 0;
   background: #4CAF50;
+  overflow-x: hidden;
 }
 
-/* Pozadí */
+/* Pozadí s jemným průhledným obrázkem */
 body::before {
   content: "";
   position: fixed;
@@ -17,21 +18,19 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-    url('img/background-kids.png') center top no-repeat;
+  background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), 
+              url('img/background-kids.png') center top no-repeat;
   background-size: cover;
   z-index: -1;
 }
 
 /* --------------------------------- */
-/* Header */
+/* Header a navigace */
 /* --------------------------------- */
 header {
   display: flex;
   align-items: center;
   padding: 20px;
-  padding-right: 160px; /* místo pro králíka */
   background: #4CAF50;
   color: white;
   gap: 20px;
@@ -40,13 +39,11 @@ header {
   position: relative;
 }
 
-/* Logo */
-header img {
+header img.logo {
   height: 120px;
   flex-shrink: 0;
 }
 
-/* Nadpis */
 header h1 {
   margin: 0;
   font-size: 2em;
@@ -55,18 +52,12 @@ header h1 {
   text-shadow: 1px 1px 2px #333;
 }
 
-/* 🐰 Velikonoční obrázek vpravo nahoře */
-.easter-header {
+header img.rabbit {
   position: absolute;
-  right: 20px;
+  right: 10px;
   top: 10px;
-  width: 200px;
-  height: auto;
+  height: 120px;
   z-index: 10;
-}
-
-/* jemná animace */
-.easter-header {
   animation: bunny-bounce 2s infinite ease-in-out;
 }
 
@@ -75,15 +66,13 @@ header h1 {
   50% { transform: translateY(-10px); }
 }
 
-/* --------------------------------- */
-/* Navigace */
-/* --------------------------------- */
 nav {
-  background: #4CAF50;
+  background: #388E3C;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   text-align: center;
   padding: 10px 0;
   border-radius: 0 0 15px 15px;
+  position: relative;
 }
 
 nav a {
@@ -92,15 +81,16 @@ nav a {
   color: white;
   font-weight: bold;
   display: inline-block;
-  transition: color 0.3s, transform 0.3s;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
 
+/* Animace odkazů */
 nav a:hover {
-  color: #c8e6c9;
-  transform: translateY(-2px);
+  color: #ffeb3b;
+  transform: scale(1.2) rotate(-3deg);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
-/* Mobil menu */
 .menu-btn {
   display: none;
   background: #4CAF50;
@@ -111,34 +101,67 @@ nav a:hover {
   cursor: pointer;
   border-radius: 8px;
   margin: 10px;
+  transition: background 0.3s;
 }
-
 .menu-btn.open { background: #388E3C; }
 
 /* --------------------------------- */
 /* Sekce výsledky */
 /* --------------------------------- */
 .admissions {
+  position: relative;
   background: #fff8e1;
   padding: 40px 20px;
   text-align: center;
   border-radius: 15px;
   margin: 20px auto;
   max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1;
 }
 
 .admissions h2.important-info {
+  display: inline-block;
   background: #ffeb3b;
   color: #d32f2f;
+  font-size: 1.8em;
+  font-weight: bold;
   padding: 10px 20px;
   border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .admissions h2.important-info::before { content: "❗ "; }
-.admissions h2.important-info::after { content: " ❗"; }
+.admissions h2.important-info::after  { content: " ❗"; }
+
+.admissions p { font-size: 1.1em; margin: 15px 0 25px 0; }
+
+.results-block { margin: 15px 0; padding: 20px; border-radius: 12px; }
+
+.results-block .btn-results.ms {
+  background: #ffcc80;
+  color: #3e2723;
+}
+.results-block .btn-results.ms:hover { background: #ffb74d; }
+
+.results-block .btn-results.zs {
+  background: #a5d6a7;
+  color: #1b5e20;
+}
+.results-block .btn-results.zs:hover { background: #81c784; }
+
+.btn-results {
+  display: inline-block;
+  font-size: 1.1em;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
 
 /* --------------------------------- */
-/* Grid karty */
+/* Grid s kartami škol */
 /* --------------------------------- */
 .grid {
   display: grid;
@@ -152,22 +175,26 @@ nav a:hover {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  border: 3px solid #ffeb3b; /* zvýrazněné ohraničení */
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  cursor: pointer;
 }
 
+/* Hover efekt celé karty */
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  border-color: #f57c00; /* změna barvy okraje při hoveru */
 }
 
 .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-radius: 15px 15px 0 0;
 }
 
-.card-content {
-  padding: 20px;
-}
+.card-content { padding: 20px; }
 
 .btn-card {
   display: inline-block;
@@ -177,37 +204,49 @@ nav a:hover {
   color: white;
   text-decoration: none;
   border-radius: 8px;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efekt klikacího tlačítka uvnitř karty */
+.card:hover .btn-card {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .btn-card:hover { background: #388E3C; }
 
 /* --------------------------------- */
 /* Footer */
-/* --------------------------------- */
 footer {
   text-align: center;
   padding: 20px;
+  color: #777;
+  border-top: 1px solid #ddd;
   background: #f1f8e9;
 }
 
 /* --------------------------------- */
-/* Mobil */
+/* Velikonoční vajíčka */
+.egg {
+  position: fixed;
+  top: -100px;
+  z-index: 5;
+  pointer-events: none;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-50px); opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(110vh); opacity: 0; }
+}
+
 /* --------------------------------- */
+/* Responzivita */
 @media (max-width: 600px) {
   .menu-btn { display: block; }
-  header h1 { font-size: 1.5em; }
-
-  nav a { display: block; }
-
-  /* králík pod headerem na mobilu */
-  header {
-    padding-right: 20px;
-  }
-
-  .easter-header {
-    position: static;
-    display: block;
-    margin: 10px auto;
-    width: 100px;
-  }
+  header h1 { font-size: 1.5em; text-align: center; }
+  nav a { display: block; margin: 8px 0; }
+  header img.rabbit { height: 80px; top: 5px; right: 5px; }
+  header { padding-right: 20px; }
 }

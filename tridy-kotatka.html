@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MŠ A&T – Plán akcí</title>
+<title>MŠ A&T – Třída Krtečci</title>
 <style>
 /* --------------------------------- */
 /* Základní nastavení stránky */
@@ -51,7 +51,7 @@ header h1 {
 }
 
 /* --------------------------------- */
-/* Navigace (stejná jako na hlavní stránce) */
+/* Navigace */
 /* --------------------------------- */
 nav {
   background:#388E3C;
@@ -90,9 +90,40 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-h2 { color:#2e7d32; text-align:center; margin-bottom:20px; }
-ul { padding-left:20px; }
-li { margin:8px 0; }
+h2 {
+  color:#2e7d32;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+p {
+  margin-bottom:15px;
+}
+
+/* Fotka učitelky napravo */
+.teacher-img {
+  float:right;
+  max-width:180px;
+  margin-left:20px;
+  border-radius:10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Galerie fotek pod textem */
+.photo-gallery {
+  display:flex;
+  justify-content: center;
+  gap:20px;
+  margin-top:25px;
+  flex-wrap: wrap;
+}
+
+.photo-gallery img {
+  max-width:250px;
+  width:100%;
+  border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
 
 /* Back button */
 a.back {
@@ -115,6 +146,8 @@ a.back:hover {
 @media(max-width:600px){
   header h1 { font-size:1.5em; }
   header img { max-height:70px; }
+  .teacher-img { float:none; display:block; margin: 0 auto 15px auto; max-width: 150px; }
+  .photo-gallery img { max-width:180px; }
 }
 </style>
 </head>
@@ -138,39 +171,23 @@ a.back:hover {
 </nav>
 
 <div class="container">
-  <h2>Plán akcí pro školní rok</h2>
+  <h2>Třída Krtečci</h2>
 
-  <ul>
-    <li>ZAHÁJENÍ ŠKOLNÍHO ROKU</li>
-    <li>OVOCNO – ZELENINOVÝ DEN „Zahrádky a zahrady“</li>
-    <li>ZAHÁJENÍ PLAVECKÉHO VÝCVIKU V KLUBU CHOBOTNIČKA</li>
-    <li>POZNÁVÁME PŘEROV</li>
-    <li>HRÁTKY A VÝTVARNÁ VÝCHOVA S PŘÍRODNINAMI</li>
-    <li>ZAHÁJENÍ KROUŽKU „Angličtina“</li>
-    <li>CANISTERAPIE</li>
-    <li>BESEDY S MYSLIVCEM</li>
-    <li>MIKULÁŠSKÁ BESÍDKA</li>
-    <li>VÁNOČNÍ DÍLNIČKY A BESÍDKY</li>
-    <li>ZAHÁJENÍ LYŽAŘSKÉHO VÝCVIKU</li>
-    <li>KARNEVAL</li>
-    <li>ZÁJEZDY DO DIVADLA V OLOMOUCI</li>
-    <li>DIVADELNÍ LOUTKOVÉ PŘEDSTAVENÍ V MŠ</li>
-    <li>BAREVNÝ TÝDEN</li>
-    <li>NÁVŠTĚVA KNIHOVNY</li>
-    <li>VYNÁŠENÍ MORANY – VÍTÁNÍ JARA</li>
-    <li>TECHNIKA - NÁŠ KAMARÁD</li>
-    <li>DOPRAVNÍ DEN</li>
-    <li>EXKURZE (hasiči, policie, vlakové nádraží…)</li>
-    <li>VELIKONOCE „Hody hody doprovody“</li>
-    <li>ČARODĚJNICKÝ REJ</li>
-    <li>ZÁPIS DO MATEŘSKÉ S SPECIÁLNÍ MATEŘSKÉ ŠKOLY</li>
-    <li>BESÍDKA PRO MAMINKY</li>
-    <li>ŠKOLA V PŘÍRODĚ</li>
-    <li>SPORTOVNÍ DEN</li>
-    <li>DĚTSKÝ DEN</li>
-    <li>VÝLET</li>
-    <li>SLAVNOSTNÍ ROZLOUČENÍ SE ŠKOLÁKY (NOC V MŠ)</li>
-  </ul>
+  <img src="img/krtecek.jpg" alt="Třídní učitelka" class="teacher-img">
+
+  <p><strong>Třídní učitelka:</strong> Jana Sládečková</p>
+  <p><strong>Chůva:</strong> Zuzana Vymětalíková</p>
+  <p><strong>Kontakt:</strong> +420 605 530 347</p>
+  <p><strong>Skladba třídy:</strong> V naší třídě je 12 dětí ve věku od 2 do 3 let.</p>
+  <p><strong>Provoz třídy:</strong> 6:30 – 15:30 hod.</p>
+  <p><strong>Třída:</strong> třída se nachází v přízemí uprostřed budovy. Je rozdělená na dvě části – hernu a třídu. Prostorově odpovídá potřebám dětí. Třída i herna jsou vybaveny kvalitním nábytkem. Výzdoba třídy závisí na ročním období a také na tématu, které s dětmi zrovna probíráme. V herně mají děti dostatek prostoru pro tvořivé, námětové i pohybové aktivity. Herna slouží zároveň jako prostor k odpočinku a relaxaci dětí. Součástí třídy je umývárna a WC, kde učíme děti základním hygienickým návykům. V šatně i třídě má každé dítě své místo označené značkou.</p>
+  <p><strong>Zaměření třídy:</strong> Všechny děti přichází poprvé do předškolního kolektivu MŠ, proto je potřeba individuálně přistupovat ke každému dítěti a zaměřit se na pozvolnou adaptaci. Také na dodržování „Krtečkových pravidel“, která vedou děti k osvojení si pravidel slušného chování. Činnosti jsou vybírány s velkým ohledem na nízký věk dětí. Našim cílem je vytvořit přátelské klima ve třídě.</p>
+  <p>Součástí výuky je plavání v prostorách školky, cvičení, výtvarné, hudební, dramatické a jazykové činnosti. Děti velmi rády tvoří a s nadšením se zapojují do dění ve školce. Zúčastňujeme se kulturních a sportovních akcí. Samozřejmostí je pitný režim.</p>
+
+  <div class="photo-gallery">
+    <img src="img/krtecek1.jpg" alt="Krteček 1">
+    <img src="img/krtecek2.jpg" alt="Krteček 2">
+  </div>
 
   <a href="ms-at.html" class="back">← Zpět na základní informace</a>
 </div>

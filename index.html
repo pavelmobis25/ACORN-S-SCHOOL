@@ -4,232 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Školy A&T a A&J</title>
-  <style>
-    /* --------------------------------- */
-    /* Základní nastavení stránky */
-    /* --------------------------------- */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      position: relative;
-      z-index: 0;
-      background: #4CAF50; /* zelené pozadí */
-      overflow-x: hidden;
-    }
-
-    /* Pozadí s jemným průhledným obrázkem */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('img/background-kids.png') center top no-repeat;
-      background-size: cover;
-      z-index: -1;
-    }
-
-    /* --------------------------------- */
-    /* Header a navigace */
-    /* --------------------------------- */
-    header {
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      background: #4CAF50;
-      color: white;
-      gap: 20px;
-      flex-wrap: wrap;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      position: relative;
-    }
-
-    header img.logo {
-      height: 120px;
-      flex-shrink: 0;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-      flex-grow: 1;
-      text-align: center;
-      text-shadow: 1px 1px 2px #333;
-    }
-
-    /* Králík nahoře vpravo */
-    header img.rabbit {
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      height: 120px;
-      z-index: 10;
-    }
-
-    nav {
-      background: #4CAF50;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-      padding: 10px 0;
-      border-radius: 0 0 15px 15px;
-      position: relative;
-    }
-
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      display: inline-block;
-      transition: color 0.3s, transform 0.3s;
-    }
-
-    nav a:hover { 
-      color: #c8e6c9;
-      transform: translateY(-2px); 
-    }
-
-    .menu-btn {
-      display: none;
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 8px;
-      margin: 10px;
-      transition: background 0.3s;
-    }
-    .menu-btn.open { background: #388E3C; }
-
-    /* --------------------------------- */
-    /* Sekce výsledky s odkazy */
-    /* --------------------------------- */
-    .admissions {
-      position: relative;
-      background: #fff8e1;
-      padding: 40px 20px;
-      text-align: center;
-      border-radius: 15px;
-      margin: 20px auto;
-      max-width: 800px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      z-index: 1;
-    }
-
-    .admissions h2.important-info {
-      display: inline-block;
-      background: #ffeb3b;
-      color: #d32f2f;
-      font-size: 1.8em;
-      font-weight: bold;
-      padding: 10px 20px;
-      border-radius: 12px;
-      position: relative;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .admissions h2.important-info::before { content: "❗ "; }
-    .admissions h2.important-info::after  { content: " ❗"; }
-
-    .admissions p { font-size: 1.1em; margin: 15px 0 25px 0; }
-
-    .results-block { margin: 15px 0; padding: 20px; border-radius: 12px; }
-
-    .results-block .btn-results.ms {
-      background: #ffcc80;
-      color: #3e2723;
-    }
-    .results-block .btn-results.ms:hover { background: #ffb74d; }
-
-    .results-block .btn-results.zs {
-      background: #a5d6a7;
-      color: #1b5e20;
-    }
-    .results-block .btn-results.zs:hover { background: #81c784; }
-
-    .btn-results {
-      display: inline-block;
-      font-size: 1.1em;
-      padding: 12px 25px;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-
-    /* --------------------------------- */
-    /* Grid s kartami škol */
-    /* --------------------------------- */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
-    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px 15px 0 0; }
-    .card-content { padding: 20px; }
-    .btn-card {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-    .btn-card:hover { background: #388E3C; }
-
-    /* --------------------------------- */
-    /* Footer */
-    /* --------------------------------- */
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      border-top: 1px solid #ddd;
-      background: #f1f8e9;
-    }
-
-    /* --------------------------------- */
-    /* Velikonoční vajíčka */
-    /* --------------------------------- */
-    .egg {
-      position: fixed;
-      top: -100px;
-      z-index: 5;
-      pointer-events: none;
-      animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-      0% { transform: translateY(-50px); opacity: 1; }
-      80% { opacity: 1; }
-      100% { transform: translateY(110vh); opacity: 0; }
-    }
-
-    /* --------------------------------- */
-    /* Responzivita */
-    /* --------------------------------- */
-    @media (max-width: 600px) {
-      .menu-btn { display: block; }
-      header h1 { font-size: 1.5em; text-align: center; }
-      nav a { display: block; margin: 8px 0; }
-      header img.rabbit { height: 80px; top: 5px; right: 5px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -241,7 +16,7 @@
 
 <nav id="navbar">
   <button class="menu-btn" id="menuBtn">☰ Menu</button>
-  <a href="index.html">Domů</a>
+  <a href="uvod.html">Úvod</a>
   <a href="ms-at.html">Mateřská Škola A&T</a>
   <a href="ms-aj.html">Speciální Mateřská Škola A&J</a>
   <a href="zs-aj.html">Základní Škola A&J</a>
@@ -263,7 +38,7 @@
 </section>
 
 <div class="grid">
-  <div class="card">
+  <div class="card" data-href="ms-at.html">
     <img src="img/skolka1.png" alt="MŠ A&T">
     <div class="card-content">
       <h2>Mateřská škola A&T s.r.o.</h2>
@@ -272,7 +47,7 @@
     </div>
   </div>
 
-  <div class="card">
+  <div class="card" data-href="ms-aj.html">
     <img src="img/skolka2.png" alt="Speciální MŠ A&J">
     <div class="card-content">
       <h2>Speciální mateřská škola A&J s.r.o.</h2>
@@ -281,7 +56,7 @@
     </div>
   </div>
 
-  <div class="card">
+  <div class="card" data-href="zs-aj.html">
     <img src="img/skola.png" alt="ZŠ A&J">
     <div class="card-content">
       <h2>Soukromá základní škola A&J s.r.o.</h2>
@@ -295,28 +70,6 @@
   © 2026 Školy A&T a A&J
 </footer>
 
-<script>
-  // Menu mobil
-  const menuBtn = document.getElementById('menuBtn');
-  const nav = document.getElementById('navbar');
-  menuBtn.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    menuBtn.classList.toggle('open');
-  });
-
-  // Vytvoření vajíček
-  const eggCount = 15; // počet vajíček
-  for(let i=0;i<eggCount;i++){
-    const egg = document.createElement('img');
-    egg.src = 'img/egg.png';
-    egg.className = 'egg';
-    egg.style.left = Math.random()*95 + 'vw';
-    egg.style.width = (40 + Math.random()*40) + 'px';
-    egg.style.animationDuration = (6 + Math.random()*6) + 's';
-    egg.style.animationDelay = (Math.random()*5)+'s';
-    document.body.appendChild(egg);
-  }
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
